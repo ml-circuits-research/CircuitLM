@@ -1,0 +1,27 @@
+@input text
+@input query default ""
+@input limit default 3
+@input locale default "en"
+@sentences kernel.text.sentences text $text locale $locale
+@tokensBySentence kernel.flow.map items $sentences circuit "text.summary.tokens"
+@flat kernel.seq.flat items $tokensBySentence
+@histogram kernel.seq.histogram items $flat
+@queryTokens0 kernel.text.tokens text $query lower true locale $locale
+@stop language.stopwords
+@queryTokens kernel.seq.difference left $queryTokens0 right $stop
+@config text.summary.config
+@cues text.summary.cues
+@args kernel.value.record histogram $histogram queryTokens $queryTokens config $config cues $cues
+@features kernel.flow.map items $sentences circuit "text.summary.feature" with $args
+@empty kernel.seq.make
+@seed kernel.value.record remaining $features selected $empty covered $empty all $features limit $limit
+@iterations kernel.seq.range count $limit
+@selectArgs kernel.value.record config $config
+@state kernel.flow.fold items $iterations seed $seed circuit "text.summary.step" with $selectArgs
+@selected kernel.value.get value $state key "selected"
+@ordered kernel.seq.sort items $selected key "index"
+@textArgs kernel.value.record key "text"
+@texts kernel.flow.map items $ordered circuit "core.field" with $textArgs
+@answer kernel.text.join items $texts separator " "
+@result kernel.value.record text $answer selected $ordered features $features method "extractive" sourceText $text
+@output result $result

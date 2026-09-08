@@ -1,0 +1,9 @@
+@x kernel.logic.variable name "entity"
+@p0 sem.term predicate "retries" subject $x polarity "positive"
+@p1 sem.term predicate "writes" subject $x polarity "positive"
+@p2 sem.term predicate "deduplicates" subject $x polarity "negative"
+@body kernel.seq.make item $p0 item $p1 item $p2
+@head sem.term predicate "duplicate_risk" subject $x
+@source kernel.value.record source "examples/manual.txt" hash "9fb102f9d41a1894e54c9ee2" start 0 end 133 quote "Within this model, a service that retries requests and writes records without deduplicating requests has a risk of duplicate records."
+@rule kernel.value.record id "kb.rules.duplicate" body $body head $head source $source
+@output result $rule

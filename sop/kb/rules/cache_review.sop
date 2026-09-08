@@ -1,0 +1,7 @@
+@x kernel.logic.variable name "entity"
+@p0 sem.term predicate "stale_risk" subject $x polarity "positive"
+@body kernel.seq.make item $p0
+@head sem.term predicate "cache_review" subject $x
+@source kernel.value.record source "examples/manual.txt" hash "9fb102f9d41a1894e54c9ee2" start 579 end 673 quote "Within this model, a risk of stale reads requires a review of the cache invalidation strategy."
+@rule kernel.value.record id "kb.rules.cache_review" body $body head $head source $source
+@output result $rule

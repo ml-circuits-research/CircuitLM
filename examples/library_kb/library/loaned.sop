@@ -1,0 +1,7 @@
+@e language.en.entry
+  predicate "loaned"
+  positive "is on loan"
+  negative "is not on loan"
+  possible "may be on loan"
+  required "must be on loan"
+@output result $e

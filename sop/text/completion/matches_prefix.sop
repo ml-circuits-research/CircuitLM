@@ -1,0 +1,5 @@
+@input item
+@input prefix
+@text kernel.value.get value $item key "text"
+@yes kernel.text.prefix text $text prefix $prefix
+@output result $yes

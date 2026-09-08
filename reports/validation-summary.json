@@ -1,0 +1,64 @@
+{
+  "tests": {
+    "total": 101,
+    "passed": 101,
+    "failed": 0
+  },
+  "summary": {
+    "cases": 18,
+    "recall": 0.8425925925925926,
+    "leadRecall": 0.4259259259259259,
+    "sourceFaithfulness": 18
+  },
+  "bySplit": [
+    {
+      "split": "development",
+      "cases": 8,
+      "recall": 0.8958333333333334,
+      "lead": 0.41666666666666663
+    },
+    {
+      "split": "holdout",
+      "cases": 10,
+      "recall": 0.8,
+      "lead": 0.4333333333333333
+    }
+  ],
+  "completion": {
+    "cases": 15,
+    "passed": 15
+  },
+  "counterfactual": {
+    "cases": 64,
+    "passed": 64
+  },
+  "architecture": {
+    "activeCircuits": 114,
+    "primitiveCommands": 43,
+    "kernel": {
+      "files": 43,
+      "lines": 284
+    },
+    "allHostSource": {
+      "files": 52,
+      "lines": 983
+    },
+    "sop": {
+      "files": 114,
+      "lines": 1190
+    },
+    "kernelAndHostSourceSHA256": "03ab280890a2630c3581dc6982d345e449693ca7b50a1b5f7fbc261fbf79c900",
+    "unknownDirectCommands": [],
+    "forbiddenKernelFindings": [],
+    "persistentKBNonSOPFiles": [],
+    "passed": true,
+    "limitation": "Static pattern audit plus runtime tests; not a formal absence-of-semantics or sandbox proof"
+  },
+  "retrospective": {
+    "inputWords": 608,
+    "outputWords": 88,
+    "sourceSpansExact": true
+  },
+  "dockerValidated": false,
+  "independentBenchmark": false
+}

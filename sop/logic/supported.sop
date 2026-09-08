@@ -1,0 +1,6 @@
+@input item
+@input facts
+@consistent logic.not_conflicted item $item facts $facts
+@args kernel.value.record item $item facts $facts
+@ok kernel.flow.choose condition $consistent then "logic.all_parents" else "core.false" with $args
+@output result $ok

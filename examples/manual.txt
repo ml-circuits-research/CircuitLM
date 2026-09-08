@@ -1,0 +1,8 @@
+Within this model, a service that retries requests and writes records without deduplicating requests has a risk of duplicate records.
+Within this model, a risk of duplicate records requires a review of the deduplication strategy.
+Within this model, a worker that acknowledges messages before persisting them and uses volatile memory has a risk of message loss.
+Within this model, a risk of message loss requires a review of the persistence strategy.
+Within this model, a cache that has an expiration limit and does not invalidate entries after updates has a risk of stale reads.
+Within this model, a risk of stale reads requires a review of the cache invalidation strategy.
+Within this model, a service that retries requests and deduplicates requests is protected against duplicate effects caused by retries.
+Within this model, a service that shares storage with a component at risk of duplicate records needs an integration review.

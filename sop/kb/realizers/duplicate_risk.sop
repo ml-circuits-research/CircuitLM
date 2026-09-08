@@ -1,0 +1,2 @@
+@entry kernel.value.record predicate "duplicate_risk" positive "has a risk of producing duplicate records when requests are retried"
+@output result $entry

@@ -1,0 +1,45 @@
+{
+  "environment": {
+    "node": "v22.16.0",
+    "icu": "77.1",
+    "platform": "linux",
+    "arch": "x64",
+    "cpuReportedByHost": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "logicalCPUsReportedByHost": 5
+  },
+  "scope": "Single-process shared CaaS measurements, not a performance guarantee or end-to-end large-KB benchmark",
+  "bootMs": 168.080119,
+  "latency": {
+    "summarize": {
+      "runs": 30,
+      "medianMs": 5.68285400000002,
+      "p95Ms": 10.030022999999971,
+      "steps": 1568
+    },
+    "semantic-summary": {
+      "runs": 30,
+      "medianMs": 14.528374000000099,
+      "p95Ms": 29.562949000000003,
+      "steps": 5789
+    },
+    "expand": {
+      "runs": 30,
+      "medianMs": 17.800917000000027,
+      "p95Ms": 52.366984,
+      "steps": 7301
+    }
+  },
+  "index": {
+    "facts": 50000,
+    "predicateBuckets": 1000,
+    "resultRows": 50,
+    "coldBuildAndQueryMs": 24.693669,
+    "coldSteps": 50050,
+    "warmMedianMs": 0.14712699999995493,
+    "warmSteps": 50,
+    "naiveSingleScanMs": 36.94561999999996,
+    "sameResultsAsScan": true,
+    "note": "Index is by predicate and fact-array identity; each changed fact array has a new index. All rule descriptors are still visited per inference round."
+  },
+  "processRSSBytes": 87363584
+}

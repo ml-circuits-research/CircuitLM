@@ -1,0 +1,12 @@
+@input item
+@input lexicon
+@input sourceHash
+@text kernel.value.get value $item key "text"
+@markers kernel.seq.make item "\"" item "'" item "“" item "”" item "‘" item "’" item "?" item "¿" item "!" item ":" item ";" item "(" item ")"
+@args kernel.value.record text $text
+@checks kernel.flow.map items $markers circuit "language.en.invalid_punctuation" with $args
+@blocked kernel.seq.includes items $checks item true
+@safe kernel.math.op op "not" a $blocked
+@parseargs kernel.value.record item $item lexicon $lexicon sourceHash $sourceHash
+@facts kernel.flow.choose condition $safe then "language.en.parse_unguarded" else "core.empty" with $parseargs
+@output result $facts

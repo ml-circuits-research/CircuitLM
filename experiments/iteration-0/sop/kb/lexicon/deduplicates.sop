@@ -1,0 +1,7 @@
+@entry language.en.entry
+  predicate "deduplicates"
+  positive "deduplicates requests"
+  negative "does not deduplicate requests"
+  possible "may deduplicate requests"
+  required "must deduplicate requests"
+@output result $entry

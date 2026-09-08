@@ -1,0 +1,9 @@
+@input state
+@input rules
+@accepted logic.accepted facts $state
+@args kernel.value.record facts $accepted
+@sets kernel.flow.map items $rules circuit "logic.apply_rule" with $args
+@new kernel.seq.flat items $sets
+@combined kernel.seq.concat items $state items $new
+@unique kernel.seq.unique items $combined key "id"
+@output result $unique

@@ -1,0 +1,9 @@
+@input item
+@input facts
+@term kernel.value.get value $item key "term"
+@opposite logic.complement term $term
+@patterns kernel.seq.make item $opposite
+@found kernel.logic.query facts $facts patterns $patterns
+@n kernel.seq.count items $found
+@yes kernel.math.op op "eq" a $n b 0
+@output result $yes

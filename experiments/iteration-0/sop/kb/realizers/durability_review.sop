@@ -1,0 +1,2 @@
+@entry kernel.value.record predicate "durability_review" positive "requires a review of the persistence strategy"
+@output result $entry

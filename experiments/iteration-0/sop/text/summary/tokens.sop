@@ -1,0 +1,7 @@
+@input item
+@t kernel.value.get value $item key "text"
+@w kernel.text.tokens text $t lower true
+@stop language.stopwords
+@content kernel.seq.difference left $w right $stop
+@unique kernel.seq.unique items $content
+@output result $unique

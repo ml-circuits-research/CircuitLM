@@ -1,0 +1,5 @@
+@input item
+@input subjects
+@subject sem.subject item $item
+@yes kernel.seq.includes items $subjects item $subject
+@output result $yes

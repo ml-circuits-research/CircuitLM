@@ -1,0 +1,14 @@
+@input item
+@input lexicon
+@term kernel.value.get value $item key "term"
+@p kernel.value.get value $term key "predicate"
+@subject kernel.value.get value $term key "subject"
+@args kernel.value.record predicate $p
+@entries kernel.flow.filter items $lexicon circuit "language.realize.entry_matches" with $args
+@entry kernel.value.get value $entries key 0
+@key language.realize.mode_key term $term
+@fragment kernel.value.get value $entry key $key default "[no realization]"
+@parts kernel.seq.make item $subject item " " item $fragment item "."
+@text kernel.text.join items $parts
+@value kernel.value.record text $text subject $subject fragment $fragment fact $item
+@output result $value

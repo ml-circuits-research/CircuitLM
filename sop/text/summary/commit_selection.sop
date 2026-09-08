@@ -1,0 +1,18 @@
+@input state
+@input candidates
+@ranked kernel.seq.sort items $candidates key "score" descending true
+@best kernel.value.get value $ranked key 0
+@nextSelected kernel.value.get value $best key "combined"
+@remaining kernel.value.get value $state key "remaining"
+@all kernel.value.get value $state key "all"
+@limit kernel.value.get value $state key "limit"
+@targs kernel.value.record key "tokens"
+@tokens kernel.flow.map items $nextSelected circuit "core.field" with $targs
+@flat kernel.seq.flat items $tokens
+@covered kernel.seq.unique items $flat
+@iargs kernel.value.record key "index"
+@indexes kernel.flow.map items $nextSelected circuit "core.field" with $iargs
+@fargs kernel.value.record indexes $indexes
+@nextRemaining kernel.flow.filter items $remaining circuit "text.summary.not_selected" with $fargs
+@result kernel.value.record remaining $nextRemaining selected $nextSelected covered $covered all $all limit $limit
+@output result $result

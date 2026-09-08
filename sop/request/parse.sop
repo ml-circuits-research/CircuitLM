@@ -1,0 +1,6 @@
+@input text
+@index kernel.text.index text $text part ":"
+@hasLabel kernel.math.op op "ge" a $index b 0
+@args kernel.value.record text $text index $index
+@result kernel.flow.choose condition $hasLabel then "request.parse_label" else "request.unsupported" with $args
+@output result $result

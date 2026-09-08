@@ -1,0 +1,7 @@
+@input term
+@mode kernel.value.get value $term key "mode"
+@asserted kernel.value.equal left $mode right "asserted"
+@polarity kernel.value.get value $term key "polarity"
+@args kernel.value.record value $polarity mode $mode
+@key kernel.flow.choose condition $asserted then "core.identity" else "language.realize.return_mode" with $args
+@output result $key

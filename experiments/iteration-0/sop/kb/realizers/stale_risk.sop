@@ -1,0 +1,2 @@
+@entry kernel.value.record predicate "stale_risk" positive "has a risk of serving stale entries before their expiration"
+@output result $entry

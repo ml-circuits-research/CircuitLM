@@ -1,0 +1,8 @@
+@input predicate
+@input subject
+@input object default ""
+@input polarity default "positive"
+@input mode default "asserted"
+@input scope default "input"
+@term kernel.value.record predicate $predicate subject $subject object $object polarity $polarity mode $mode scope $scope
+@output result $term

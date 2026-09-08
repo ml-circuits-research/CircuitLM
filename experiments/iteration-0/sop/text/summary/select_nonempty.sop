@@ -1,0 +1,19 @@
+@input state
+@input config
+@selected kernel.value.get value $state key "selected"
+@remaining kernel.value.get value $state key "remaining"
+@covered kernel.value.get value $state key "covered"
+@args kernel.value.record selected $selected covered $covered config $config
+@scored kernel.flow.map items $remaining circuit "text.summary.marginal" with $args
+@ranked kernel.seq.sort items $scored key "score" descending true
+@best kernel.value.get value $ranked key 0
+@chosen kernel.value.get value $best key "feature"
+@one kernel.seq.make item $chosen
+@nextSelected kernel.seq.concat items $selected items $one
+@tokens kernel.value.get value $chosen key "tokens"
+@both kernel.seq.concat items $covered items $tokens
+@nextCovered kernel.seq.unique items $both
+@fargs kernel.value.record chosen $chosen
+@nextRemaining kernel.flow.filter items $remaining circuit "text.summary.not_chosen" with $fargs
+@result kernel.value.record remaining $nextRemaining selected $nextSelected covered $nextCovered
+@output result $result

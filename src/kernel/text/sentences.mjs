@@ -1,0 +1,2 @@
+import { one, all, stable, hash, get, isVar, unify, substitute } from '../../generic.mjs';
+export default a => { const text = String(one(a, "text", "")); return [...new Intl.Segmenter(one(a, "locale", "en"), { granularity: "sentence" }).segment(text)].filter(s => s.segment.trim()).map((s, index) => { const lead = s.segment.length - s.segment.trimStart().length; const body = s.segment.trim(); return { index, text: body, start: s.index + lead, end: s.index + lead + body.length }; }); };

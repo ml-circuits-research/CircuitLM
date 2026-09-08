@@ -1,0 +1,2 @@
+@entry kernel.value.record predicate "retry_protected" positive "is protected against duplicate effects caused by retries under the manual assumptions"
+@output result $entry

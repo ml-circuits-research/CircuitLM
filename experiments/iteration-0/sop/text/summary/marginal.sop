@@ -1,0 +1,23 @@
+@input item
+@input selected
+@input covered
+@input config
+@tokens kernel.value.get value $item key "tokens"
+@new kernel.seq.difference left $tokens right $covered
+@nnew kernel.seq.count items $new
+@nt0 kernel.seq.count items $tokens
+@nt kernel.math.op op "max" a $nt0 b 1
+@novelty kernel.math.op op "div" a $nnew b $nt
+@simargs kernel.value.record tokens $tokens
+@sims kernel.flow.map items $selected circuit "text.summary.similarity" with $simargs
+@ordered kernel.seq.sort items $sims descending true
+@overlap kernel.value.get value $ordered key 0 default 0
+@base kernel.value.get value $item key "base"
+@nw kernel.value.get value $config key "noveltyWeight"
+@rw kernel.value.get value $config key "redundancyWeight"
+@nscore kernel.math.op op "mul" a $novelty b $nw
+@rscore kernel.math.op op "mul" a $overlap b $rw
+@plus kernel.math.op op "add" a $base b $nscore
+@score kernel.math.op op "sub" a $plus b $rscore
+@out kernel.value.record feature $item score $score novelty $novelty overlap $overlap
+@output result $out

@@ -1,0 +1,14 @@
+@input text
+@input prefix default ""
+@input pack
+@expanded text.expand text $text pack $pack limit 100
+@facts kernel.value.get value $expanded key "selected"
+@realizers kernel.value.get value $pack key "realizers"
+@args kernel.value.record lexicon $realizers
+@candidates0 kernel.flow.map items $facts circuit "language.realize.fact" with $args
+@filterargs kernel.value.record prefix $prefix
+@candidates kernel.flow.filter items $candidates0 circuit "text.completion.matches_prefix" with $filterargs
+@yes core.nonempty items $candidates
+@renderargs kernel.value.record candidates $candidates prefix $prefix
+@result kernel.flow.choose condition $yes then "text.completion.finish" else "text.completion.no_match" with $renderargs
+@output result $result

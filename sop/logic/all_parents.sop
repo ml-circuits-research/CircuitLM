@@ -1,0 +1,8 @@
+@input item
+@input facts
+@parents kernel.value.get value $item key "parents"
+@args kernel.value.record facts $facts
+@checks kernel.flow.map items $parents circuit "logic.parent_ok" with $args
+@bad kernel.seq.includes items $checks item false
+@ok kernel.math.op op "not" a $bad
+@output result $ok

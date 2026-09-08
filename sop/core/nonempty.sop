@@ -1,0 +1,4 @@
+@input items
+@n kernel.seq.count items $items
+@yes kernel.math.op op "gt" a $n b 0
+@output result $yes

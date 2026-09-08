@@ -1,0 +1,3 @@
+@input text
+@result kernel.value.record mode "unsupported" text $text
+@output result $result

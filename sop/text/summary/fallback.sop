@@ -1,0 +1,4 @@
+@input original
+@delta kernel.value.record method "extractive-fallback"
+@result kernel.value.merge value $original value $delta
+@output result $result

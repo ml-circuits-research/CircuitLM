@@ -1,0 +1,5 @@
+@input item
+@input indexes
+@index kernel.value.get value $item key "sentence"
+@yes kernel.seq.includes items $indexes item $index
+@output result $yes

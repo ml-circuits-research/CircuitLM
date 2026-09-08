@@ -1,0 +1,39 @@
+@input item
+@input histogram
+@input queryTokens
+@input config
+@input cues
+@t kernel.value.get value $item key "text"
+@index kernel.value.get value $item key "index"
+@words kernel.text.tokens text $t lower true
+@tokens text.summary.tokens item $item
+@hargs kernel.value.record histogram $histogram
+@sum kernel.flow.fold items $tokens seed 0 circuit "text.summary.add_frequency" with $hargs
+@n kernel.seq.count items $tokens
+@safeN kernel.math.op op "max" a $n b 1
+@root kernel.math.op op "sqrt" a $safeN
+@frequency kernel.math.op op "div" a $sum b $root
+@pden kernel.math.op op "add" a $index b 1
+@position kernel.math.op op "div" a 1 b $pden
+@cargs kernel.value.record cues $cues
+@cueSum kernel.flow.fold items $words seed 0 circuit "text.summary.add_cue" with $cargs
+@cue kernel.math.op op "min" a $cueSum b 1.4
+@qmatch kernel.seq.intersection left $tokens right $queryTokens
+@qcount kernel.seq.count items $qmatch
+@query kernel.math.op op "div" a $qcount b $root
+@fw kernel.value.get value $config key "frequencyWeight"
+@pw kernel.value.get value $config key "positionWeight"
+@cw kernel.value.get value $config key "cueWeight"
+@qw kernel.value.get value $config key "queryWeight"
+@fs kernel.math.op op "mul" a $frequency b $fw
+@ps kernel.math.op op "mul" a $position b $pw
+@cs kernel.math.op op "mul" a $cue b $cw
+@qs kernel.math.op op "mul" a $query b $qw
+@s1 kernel.math.op op "add" a $fs b $ps
+@s2 kernel.math.op op "add" a $s1 b $cs
+@base kernel.math.op op "add" a $s2 b $qs
+@first kernel.value.get value $words key 0 default ""
+@contextWords language.context_words
+@needsContext kernel.seq.includes items $contextWords item $first
+@value kernel.value.record index $index text $t sentence $item tokens $tokens base $base frequency $frequency position $position cue $cue query $query needsContext $needsContext
+@output result $value

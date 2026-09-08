@@ -1,0 +1,8 @@
+@v kernel.value.record
+  frequencyWeight 1.0
+  positionWeight 0.35
+  cueWeight 1.0
+  queryWeight 1.8
+  noveltyWeight 0.65
+  redundancyWeight 1.35
+@output result $v

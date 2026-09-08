@@ -1,0 +1,8 @@
+@x kernel.logic.variable name "entity"
+@p0 sem.term predicate "retries" subject $x polarity "positive"
+@p1 sem.term predicate "deduplicates" subject $x polarity "positive"
+@body kernel.seq.make item $p0 item $p1
+@head sem.term predicate "retry_protected" subject $x
+@source kernel.value.record source "examples/manual.txt" hash "9fb102f9d41a1894e54c9ee2" start 674 end 808 quote "Within this model, a service that retries requests and deduplicates requests is protected against duplicate effects caused by retries."
+@rule kernel.value.record id "kb.rules.retry_safe" body $body head $head source $source
+@output result $rule

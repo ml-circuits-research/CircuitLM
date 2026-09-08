@@ -1,0 +1,7 @@
+@entry language.en.entry
+  predicate "writes"
+  positive "writes records"
+  negative "does not write records"
+  possible "may write records"
+  required "must write records"
+@output result $entry

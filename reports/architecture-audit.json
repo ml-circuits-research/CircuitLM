@@ -1,0 +1,22 @@
+{
+  "activeCircuits": 114,
+  "primitiveCommands": 43,
+  "kernel": {
+    "files": 43,
+    "lines": 284
+  },
+  "allHostSource": {
+    "files": 52,
+    "lines": 983
+  },
+  "sop": {
+    "files": 114,
+    "lines": 1190
+  },
+  "kernelAndHostSourceSHA256": "03ab280890a2630c3581dc6982d345e449693ca7b50a1b5f7fbc261fbf79c900",
+  "unknownDirectCommands": [],
+  "forbiddenKernelFindings": [],
+  "persistentKBNonSOPFiles": [],
+  "passed": true,
+  "limitation": "Static pattern audit plus runtime tests; not a formal absence-of-semantics or sandbox proof"
+}

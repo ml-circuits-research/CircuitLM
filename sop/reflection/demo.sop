@@ -1,0 +1,8 @@
+@original kernel.registry.quote name "core.identity"
+@rewritten reflection.replace_output program $original text "The rewritten circuit returns a different value."
+@args kernel.value.record value "The original circuit remains unchanged."
+@old kernel.flow.call circuit $original with $args
+@new kernel.graph.execute program $rewritten with $args
+@handle kernel.ref.inspect handle ~new
+@result kernel.value.record original $old rewritten $new handle $handle
+@output result $result

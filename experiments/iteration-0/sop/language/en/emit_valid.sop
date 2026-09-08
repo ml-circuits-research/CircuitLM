@@ -1,0 +1,18 @@
+@input subject
+@input predicate
+@input form
+@input sentence
+@input sourceHash
+@polarity kernel.value.get value $form key "polarity"
+@mode kernel.value.get value $form key "mode"
+@term sem.term predicate $predicate subject $subject polarity $polarity mode $mode
+@start kernel.value.get value $sentence key "start"
+@end kernel.value.get value $sentence key "end"
+@index kernel.value.get value $sentence key "index"
+@quote kernel.value.get value $sentence key "text"
+@source kernel.value.record source "input" hash $sourceHash start $start end $end quote $quote
+@sources kernel.seq.make item $source
+@parents kernel.seq.make
+@fact sem.fact term $term sources $sources parents $parents sentence $index
+@facts kernel.seq.make item $fact
+@output result $facts

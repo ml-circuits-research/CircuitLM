@@ -1,0 +1,2 @@
+@result kernel.value.record text "Unsupported request. Use Summarize:, Expand:, or Complete:, or specify an explicit task." method "unsupported"
+@output result $result

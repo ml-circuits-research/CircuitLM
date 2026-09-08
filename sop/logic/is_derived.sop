@@ -1,0 +1,5 @@
+@input item
+@rule kernel.value.get value $item key "rule"
+@base kernel.value.equal left $rule right ""
+@derived kernel.math.op op "not" a $base
+@output result $derived

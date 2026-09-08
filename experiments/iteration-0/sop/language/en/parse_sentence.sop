@@ -1,0 +1,14 @@
+@input item
+@input lexicon
+@input sourceHash
+@text kernel.value.get value $item key "text"
+@tokens kernel.text.tokens text $text
+@args kernel.value.record tokens $tokens sentence $item sourceHash $sourceHash
+@sets kernel.flow.map items $lexicon circuit "language.en.match_entry" with $args
+@all kernel.seq.flat items $sets
+@unique kernel.seq.unique items $all key "id"
+@n kernel.seq.count items $unique
+@unambiguous kernel.math.op op "eq" a $n b 1
+@outargs kernel.value.record value $unique
+@facts kernel.flow.choose condition $unambiguous then "core.identity" else "core.empty" with $outargs
+@output result $facts

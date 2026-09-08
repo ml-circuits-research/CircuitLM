@@ -1,0 +1,7 @@
+@input item
+@input facts
+@body kernel.value.get value $item key "body"
+@rows kernel.logic.query facts $facts patterns $body limit 2000
+@args kernel.value.record rule $item
+@derived kernel.flow.map items $rows circuit "logic.conclude" with $args
+@output result $derived

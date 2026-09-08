@@ -1,0 +1,11 @@
+@input item
+@input tokens
+@other kernel.value.get value $item key "tokens"
+@intersection kernel.seq.intersection left $tokens right $other
+@both kernel.seq.concat items $tokens items $other
+@union kernel.seq.unique items $both
+@num kernel.seq.count items $intersection
+@den0 kernel.seq.count items $union
+@den kernel.math.op op "max" a $den0 b 1
+@score kernel.math.op op "div" a $num b $den
+@output result $score

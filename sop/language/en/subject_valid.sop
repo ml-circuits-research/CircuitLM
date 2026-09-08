@@ -1,0 +1,7 @@
+@input subject
+@words kernel.text.tokens text $subject lower true
+@blocked language.blocked_subject
+@bad kernel.seq.intersection left $words right $blocked
+@n kernel.seq.count items $bad
+@valid kernel.math.op op "eq" a $n b 0
+@output result $valid

@@ -1,0 +1,5 @@
+@input item
+@input id
+@key kernel.value.get value $item key "id"
+@yes kernel.value.equal left $key right $id
+@output result $yes

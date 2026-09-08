@@ -1,0 +1,9 @@
+@input item
+@input facts
+@args kernel.value.record id $item
+@found kernel.flow.filter items $facts circuit "logic.id_equal" with $args
+@parent kernel.value.get value $found key 0
+@present core.nonempty items $found
+@checkargs kernel.value.record item $parent facts $facts
+@ok kernel.flow.choose condition $present then "logic.supported" else "core.false" with $checkargs
+@output result $ok

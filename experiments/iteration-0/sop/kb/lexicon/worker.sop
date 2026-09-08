@@ -1,0 +1,7 @@
+@entry language.en.entry
+  predicate "worker"
+  positive "is a worker"
+  negative "is not a worker"
+  possible "may be a worker"
+  required "must be a worker"
+@output result $entry

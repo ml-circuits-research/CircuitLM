@@ -1,0 +1,7 @@
+@entry language.en.entry
+  predicate "ttl"
+  positive "has an expiration limit"
+  negative "does not have an expiration limit"
+  possible "may have an expiration limit"
+  required "must have an expiration limit"
+@output result $entry

@@ -1,0 +1,10 @@
+@input text
+@input lexicon
+@sentences kernel.text.sentences text $text
+@sourceHash kernel.value.hash value $text
+@args kernel.value.record lexicon $lexicon sourceHash $sourceHash
+@sets kernel.flow.map items $sentences circuit "language.en.parse_sentence" with $args
+@facts0 kernel.seq.flat items $sets
+@facts kernel.seq.unique items $facts0 key "id"
+@value kernel.value.record facts $facts sentences $sentences sourceHash $sourceHash
+@output result $value

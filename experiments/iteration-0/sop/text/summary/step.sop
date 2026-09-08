@@ -1,0 +1,7 @@
+@input state
+@input config
+@remaining kernel.value.get value $state key "remaining"
+@yes core.nonempty items $remaining
+@args kernel.value.record state $state config $config
+@value kernel.flow.choose condition $yes then "text.summary.select_nonempty" else "core.state" with $args
+@output result $value

@@ -1,0 +1,14 @@
+@input item
+@input all
+@input level
+@input index
+@previousIndex kernel.math.op op "sub" a $index b 1
+@previous kernel.value.get value $all key $previousIndex
+@nextLevel kernel.math.op op "add" a $level b 1
+@prefix text.summary.context_cluster item $previous all $all level $nextLevel
+@safe core.nonempty items $prefix
+@self kernel.seq.make item $item
+@combined kernel.seq.concat items $prefix items $self
+@args kernel.value.record value $combined
+@items kernel.flow.choose condition $safe then "core.identity" else "core.empty" with $args
+@output result $items

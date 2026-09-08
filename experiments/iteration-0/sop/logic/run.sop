@@ -1,0 +1,11 @@
+@input facts
+@input rules
+@input rounds default 12
+@args kernel.value.record rules $rules
+@closure kernel.flow.fix seed $facts circuit "logic.step" with $args limit $rounds
+@raw kernel.value.get value $closure key "value"
+@accepted logic.accepted facts $raw
+@complete kernel.value.get value $closure key "complete"
+@iterations kernel.value.get value $closure key "iterations"
+@value kernel.value.record facts $accepted raw $raw complete $complete iterations $iterations
+@output result $value

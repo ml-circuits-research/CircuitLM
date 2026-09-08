@@ -1,0 +1,5 @@
+@input fragment
+@input object
+@parts kernel.seq.make item $fragment item " " item $object
+@text kernel.text.join items $parts
+@output result $text

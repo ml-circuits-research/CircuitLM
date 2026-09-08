@@ -1,0 +1,2 @@
+import { one, all, stable, hash, get, isVar, unify, substitute } from '../../generic.mjs';
+export default a => String(one(a, "text", "")).startsWith(String(one(a, "prefix", "")));

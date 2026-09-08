@@ -1,0 +1,11 @@
+@input item
+@input tokens
+@input sentence
+@input sourceHash
+@predicate kernel.value.get value $item key "predicate"
+@forms kernel.value.get value $item key "forms"
+@relational kernel.value.get value $item key "relational" default false
+@args kernel.value.record predicate $predicate tokens $tokens sentence $sentence sourceHash $sourceHash relational $relational
+@sets kernel.flow.map items $forms circuit "language.en.match_form" with $args
+@facts kernel.seq.flat items $sets
+@output result $facts

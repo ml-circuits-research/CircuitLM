@@ -1,0 +1,7 @@
+@e language.en.entry
+  predicate "overdue"
+  positive "is overdue"
+  negative "is not overdue"
+  possible "may be overdue"
+  required "must be overdue"
+@output result $e

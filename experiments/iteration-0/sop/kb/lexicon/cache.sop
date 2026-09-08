@@ -1,0 +1,7 @@
+@entry language.en.entry
+  predicate "cache"
+  positive "is a cache"
+  negative "is not a cache"
+  possible "may be a cache"
+  required "must be a cache"
+@output result $entry

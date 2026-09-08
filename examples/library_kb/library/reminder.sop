@@ -1,0 +1,8 @@
+@x kernel.logic.variable name "item"
+@p0 sem.term predicate "loaned" subject $x
+@p1 sem.term predicate "overdue" subject $x
+@body kernel.seq.make item $p0 item $p1
+@head sem.term predicate "return_reminder" subject $x
+@source kernel.value.record source "examples/library-manual.txt" hash "0e45c6a74c5fcb80bbad2a55" start 0 end 84 quote "Within this example, an item that is on loan and is overdue needs a return reminder."
+@rule kernel.value.record id "library.reminder" body $body head $head source $source
+@output result $rule

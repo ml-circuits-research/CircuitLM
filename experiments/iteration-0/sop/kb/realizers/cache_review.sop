@@ -1,0 +1,2 @@
+@entry kernel.value.record predicate "cache_review" positive "requires a review of the cache invalidation strategy"
+@output result $entry

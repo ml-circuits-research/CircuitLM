@@ -1,0 +1,8 @@
+@entry language.en.entry
+ predicate "shares"
+ positive "shares storage with"
+ negative "does not share storage with"
+ possible "may share storage with"
+ required "must share storage with"
+ relational true
+@output result $entry

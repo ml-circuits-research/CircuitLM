@@ -1,0 +1,13 @@
+@input mode
+@input text
+@input query default ""
+@input prefix default ""
+@input limit default 3
+@input locale default "en"
+@input rounds default 12
+@input pack
+@commands kernel.value.record summarize "text.summarize" semantic-summary "text.summarize_semantic" expand "text.expand" complete "text.complete"
+@command kernel.value.get value $commands key $mode default "tasks.unsupported"
+@args kernel.value.record text $text query $query prefix $prefix limit $limit locale $locale pack $pack rounds $rounds
+@result kernel.flow.call circuit $command with $args
+@output result $result

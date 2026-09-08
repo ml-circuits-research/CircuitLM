@@ -1,0 +1,5 @@
+@input facts
+@args kernel.value.record facts $facts
+@consistent kernel.flow.filter items $facts circuit "logic.supported" with $args
+@asserted kernel.flow.filter items $consistent circuit "logic.is_asserted"
+@output result $asserted

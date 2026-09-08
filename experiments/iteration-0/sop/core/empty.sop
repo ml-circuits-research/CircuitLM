@@ -1,0 +1,2 @@
+@items kernel.seq.make
+@output result $items

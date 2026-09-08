@@ -1,0 +1,2 @@
+@entry kernel.value.record predicate "integration_review" positive "requires an integration review because a component sharing its storage is at risk of duplicate records"
+@output result $entry

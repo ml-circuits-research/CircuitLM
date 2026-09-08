@@ -1,0 +1,10 @@
+@input item
+@input all
+@input level
+@index kernel.value.get value $item key "index"
+@hasPrevious kernel.math.op op "gt" a $index b 0
+@bounded kernel.math.op op "lt" a $level b 8
+@safe kernel.math.op op "and" a $hasPrevious b $bounded
+@args kernel.value.record item $item all $all level $level index $index
+@items kernel.flow.choose condition $safe then "text.summary.context_recurse" else "core.empty" with $args
+@output result $items

@@ -1,0 +1,6 @@
+@input items
+@n kernel.seq.count items $items
+@many kernel.math.op op "gt" a $n b 1
+@args kernel.value.record items $items
+@out kernel.flow.choose condition $many then "language.conjoin_many" else "language.conjoin_one" with $args
+@output result $out

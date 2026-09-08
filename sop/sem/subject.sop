@@ -1,0 +1,4 @@
+@input item
+@term kernel.value.get value $item key "term"
+@subject kernel.value.get value $term key "subject"
+@output result $subject

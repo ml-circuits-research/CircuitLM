@@ -1,0 +1,29 @@
+@l0 kb.lexicon.retries
+@l1 kb.lexicon.writes
+@l2 kb.lexicon.deduplicates
+@l3 kb.lexicon.early_ack
+@l4 kb.lexicon.volatile
+@l5 kb.lexicon.ttl
+@l6 kb.lexicon.invalidates
+@l7 kb.lexicon.cache
+@l8 kb.lexicon.worker
+@lexicon kernel.seq.make item $l0 item $l1 item $l2 item $l3 item $l4 item $l5 item $l6 item $l7 item $l8
+@r0 kb.rules.duplicate
+@r1 kb.rules.dedup_review
+@r2 kb.rules.loss
+@r3 kb.rules.durability_review
+@r4 kb.rules.stale
+@r5 kb.rules.cache_review
+@r6 kb.rules.retry_safe
+@rules kernel.seq.make item $r0 item $r1 item $r2 item $r3 item $r4 item $r5 item $r6
+@n0 kb.realizers.duplicate_risk
+@n1 kb.realizers.dedup_review
+@n2 kb.realizers.loss_risk
+@n3 kb.realizers.durability_review
+@n4 kb.realizers.stale_risk
+@n5 kb.realizers.cache_review
+@n6 kb.realizers.retry_protected
+@realizers kernel.seq.make item $n0 item $n1 item $n2 item $n3 item $n4 item $n5 item $n6
+@allRealizers kernel.seq.concat items $lexicon items $realizers
+@pack kernel.value.record lexicon $lexicon rules $rules realizers $allRealizers name "Synthetic service manual"
+@output result $pack

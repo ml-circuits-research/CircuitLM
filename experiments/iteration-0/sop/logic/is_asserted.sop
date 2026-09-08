@@ -1,0 +1,5 @@
+@input item
+@term kernel.value.get value $item key "term"
+@mode kernel.value.get value $term key "mode"
+@yes kernel.value.equal left $mode right "asserted"
+@output result $yes

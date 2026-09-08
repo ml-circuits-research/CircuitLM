@@ -1,0 +1,6 @@
+@input state
+@input item
+@input histogram
+@f kernel.value.get value $histogram key $item default 0
+@v kernel.math.op op "add" a $state b $f
+@output result $v

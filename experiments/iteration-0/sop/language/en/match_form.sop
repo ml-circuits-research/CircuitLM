@@ -1,0 +1,14 @@
+@input item
+@input predicate
+@input tokens
+@input sentence
+@input sourceHash
+@formTokens kernel.value.get value $item key "tokens"
+@capture kernel.value.record kind "capture" name "subject" min 1 max 8
+@head kernel.seq.make item $capture
+@pattern kernel.seq.concat items $head items $formTokens
+@matches kernel.seq.match items $tokens pattern $pattern casefold true
+@args kernel.value.record predicate $predicate form $item sentence $sentence sourceHash $sourceHash
+@sets kernel.flow.map items $matches circuit "language.en.emit_match" with $args
+@facts kernel.seq.flat items $sets
+@output result $facts

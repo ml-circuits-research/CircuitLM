@@ -1,0 +1,4 @@
+@input item
+@input key
+@value kernel.value.get value $item key $key
+@output result $value

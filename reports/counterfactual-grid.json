@@ -1,0 +1,605 @@
+{
+  "cases": 64,
+  "passed": 64,
+  "scope": "One rule-family Cartesian matrix, not 64 independent NLP tasks",
+  "rows": [
+    {
+      "id": 1,
+      "retries": "unknown",
+      "writes": "unknown",
+      "deduplicates": "unknown",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 2,
+      "retries": "unknown",
+      "writes": "unknown",
+      "deduplicates": "positive",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 3,
+      "retries": "unknown",
+      "writes": "unknown",
+      "deduplicates": "negative",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 4,
+      "retries": "unknown",
+      "writes": "unknown",
+      "deduplicates": "both",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 5,
+      "retries": "unknown",
+      "writes": "positive",
+      "deduplicates": "unknown",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 6,
+      "retries": "unknown",
+      "writes": "positive",
+      "deduplicates": "positive",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 7,
+      "retries": "unknown",
+      "writes": "positive",
+      "deduplicates": "negative",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 8,
+      "retries": "unknown",
+      "writes": "positive",
+      "deduplicates": "both",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 9,
+      "retries": "unknown",
+      "writes": "negative",
+      "deduplicates": "unknown",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 10,
+      "retries": "unknown",
+      "writes": "negative",
+      "deduplicates": "positive",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 11,
+      "retries": "unknown",
+      "writes": "negative",
+      "deduplicates": "negative",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 12,
+      "retries": "unknown",
+      "writes": "negative",
+      "deduplicates": "both",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 13,
+      "retries": "unknown",
+      "writes": "both",
+      "deduplicates": "unknown",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 14,
+      "retries": "unknown",
+      "writes": "both",
+      "deduplicates": "positive",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 15,
+      "retries": "unknown",
+      "writes": "both",
+      "deduplicates": "negative",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 16,
+      "retries": "unknown",
+      "writes": "both",
+      "deduplicates": "both",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 17,
+      "retries": "positive",
+      "writes": "unknown",
+      "deduplicates": "unknown",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 18,
+      "retries": "positive",
+      "writes": "unknown",
+      "deduplicates": "positive",
+      "actual": [
+        "retry_protected"
+      ],
+      "expected": [
+        "retry_protected"
+      ],
+      "pass": true
+    },
+    {
+      "id": 19,
+      "retries": "positive",
+      "writes": "unknown",
+      "deduplicates": "negative",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 20,
+      "retries": "positive",
+      "writes": "unknown",
+      "deduplicates": "both",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 21,
+      "retries": "positive",
+      "writes": "positive",
+      "deduplicates": "unknown",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 22,
+      "retries": "positive",
+      "writes": "positive",
+      "deduplicates": "positive",
+      "actual": [
+        "retry_protected"
+      ],
+      "expected": [
+        "retry_protected"
+      ],
+      "pass": true
+    },
+    {
+      "id": 23,
+      "retries": "positive",
+      "writes": "positive",
+      "deduplicates": "negative",
+      "actual": [
+        "dedup_review",
+        "duplicate_risk"
+      ],
+      "expected": [
+        "dedup_review",
+        "duplicate_risk"
+      ],
+      "pass": true
+    },
+    {
+      "id": 24,
+      "retries": "positive",
+      "writes": "positive",
+      "deduplicates": "both",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 25,
+      "retries": "positive",
+      "writes": "negative",
+      "deduplicates": "unknown",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 26,
+      "retries": "positive",
+      "writes": "negative",
+      "deduplicates": "positive",
+      "actual": [
+        "retry_protected"
+      ],
+      "expected": [
+        "retry_protected"
+      ],
+      "pass": true
+    },
+    {
+      "id": 27,
+      "retries": "positive",
+      "writes": "negative",
+      "deduplicates": "negative",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 28,
+      "retries": "positive",
+      "writes": "negative",
+      "deduplicates": "both",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 29,
+      "retries": "positive",
+      "writes": "both",
+      "deduplicates": "unknown",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 30,
+      "retries": "positive",
+      "writes": "both",
+      "deduplicates": "positive",
+      "actual": [
+        "retry_protected"
+      ],
+      "expected": [
+        "retry_protected"
+      ],
+      "pass": true
+    },
+    {
+      "id": 31,
+      "retries": "positive",
+      "writes": "both",
+      "deduplicates": "negative",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 32,
+      "retries": "positive",
+      "writes": "both",
+      "deduplicates": "both",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 33,
+      "retries": "negative",
+      "writes": "unknown",
+      "deduplicates": "unknown",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 34,
+      "retries": "negative",
+      "writes": "unknown",
+      "deduplicates": "positive",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 35,
+      "retries": "negative",
+      "writes": "unknown",
+      "deduplicates": "negative",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 36,
+      "retries": "negative",
+      "writes": "unknown",
+      "deduplicates": "both",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 37,
+      "retries": "negative",
+      "writes": "positive",
+      "deduplicates": "unknown",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 38,
+      "retries": "negative",
+      "writes": "positive",
+      "deduplicates": "positive",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 39,
+      "retries": "negative",
+      "writes": "positive",
+      "deduplicates": "negative",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 40,
+      "retries": "negative",
+      "writes": "positive",
+      "deduplicates": "both",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 41,
+      "retries": "negative",
+      "writes": "negative",
+      "deduplicates": "unknown",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 42,
+      "retries": "negative",
+      "writes": "negative",
+      "deduplicates": "positive",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 43,
+      "retries": "negative",
+      "writes": "negative",
+      "deduplicates": "negative",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 44,
+      "retries": "negative",
+      "writes": "negative",
+      "deduplicates": "both",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 45,
+      "retries": "negative",
+      "writes": "both",
+      "deduplicates": "unknown",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 46,
+      "retries": "negative",
+      "writes": "both",
+      "deduplicates": "positive",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 47,
+      "retries": "negative",
+      "writes": "both",
+      "deduplicates": "negative",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 48,
+      "retries": "negative",
+      "writes": "both",
+      "deduplicates": "both",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 49,
+      "retries": "both",
+      "writes": "unknown",
+      "deduplicates": "unknown",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 50,
+      "retries": "both",
+      "writes": "unknown",
+      "deduplicates": "positive",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 51,
+      "retries": "both",
+      "writes": "unknown",
+      "deduplicates": "negative",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 52,
+      "retries": "both",
+      "writes": "unknown",
+      "deduplicates": "both",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 53,
+      "retries": "both",
+      "writes": "positive",
+      "deduplicates": "unknown",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 54,
+      "retries": "both",
+      "writes": "positive",
+      "deduplicates": "positive",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 55,
+      "retries": "both",
+      "writes": "positive",
+      "deduplicates": "negative",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 56,
+      "retries": "both",
+      "writes": "positive",
+      "deduplicates": "both",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 57,
+      "retries": "both",
+      "writes": "negative",
+      "deduplicates": "unknown",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 58,
+      "retries": "both",
+      "writes": "negative",
+      "deduplicates": "positive",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 59,
+      "retries": "both",
+      "writes": "negative",
+      "deduplicates": "negative",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 60,
+      "retries": "both",
+      "writes": "negative",
+      "deduplicates": "both",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 61,
+      "retries": "both",
+      "writes": "both",
+      "deduplicates": "unknown",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 62,
+      "retries": "both",
+      "writes": "both",
+      "deduplicates": "positive",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 63,
+      "retries": "both",
+      "writes": "both",
+      "deduplicates": "negative",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    },
+    {
+      "id": 64,
+      "retries": "both",
+      "writes": "both",
+      "deduplicates": "both",
+      "actual": [],
+      "expected": [],
+      "pass": true
+    }
+  ]
+}

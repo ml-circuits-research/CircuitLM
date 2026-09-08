@@ -1,0 +1,11 @@
+@input text
+@input index
+@head kernel.text.slice text $text end $index
+@label0 kernel.text.trim text $head
+@label kernel.text.lower text $label0
+@aliases kernel.value.record summarize "summarize" summary "summarize" rezumă "summarize" rezuma "summarize" expand "expand" continue "expand" complete "complete" semantic-summary "semantic-summary"
+@mode kernel.value.get value $aliases key $label default "unsupported"
+@start kernel.math.op op "add" a $index b 1
+@body kernel.text.slice text $text start $start
+@result kernel.value.record mode $mode text $body
+@output result $result

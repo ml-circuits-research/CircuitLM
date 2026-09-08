@@ -1,0 +1,880 @@
+{
+  "stage": "current",
+  "node": "v22.16.0",
+  "scope": "Small authored fixtures, not an independent language benchmark",
+  "summary": {
+    "cases": 18,
+    "recall": 0.8425925925925926,
+    "leadRecall": 0.4259259259259259,
+    "sourceFaithfulness": 18
+  },
+  "completion": {
+    "cases": 15,
+    "passed": 15
+  },
+  "summaries": [
+    {
+      "id": "dev-cache",
+      "split": "development",
+      "locale": "en",
+      "input": "The team evaluated a cache to reduce document retrieval latency. The planning meeting took place on a Tuesday. The office has a blue door and a large conference table. The cache reduced median retrieval latency by 40 percent. The demonstration used the standard presentation template. However, stale entries remained after updates, so the team delayed deployment.",
+      "gold": [
+        0,
+        3,
+        5
+      ],
+      "selected": [
+        0,
+        3,
+        5
+      ],
+      "recall": 1,
+      "precision": 1,
+      "leadRecall": 0.3333333333333333,
+      "exactSource": true,
+      "milliseconds": 19.984816999999993,
+      "output": "The team evaluated a cache to reduce document retrieval latency. The cache reduced median retrieval latency by 40 percent. However, stale entries remained after updates, so the team delayed deployment."
+    },
+    {
+      "id": "dev-sensor",
+      "split": "development",
+      "locale": "en",
+      "input": "The experiment tested whether a low-cost sensor could detect water leaks. The sensor enclosure was painted grey. The project notebook includes photographs of the laboratory. The sensor detected 18 of 20 leaks in the controlled trial. The team met with a supplier at the annual exhibition. However, performance in outdoor conditions has not been measured.",
+      "gold": [
+        0,
+        3,
+        5
+      ],
+      "selected": [
+        0,
+        3,
+        5
+      ],
+      "recall": 1,
+      "precision": 1,
+      "leadRecall": 0.3333333333333333,
+      "exactSource": true,
+      "milliseconds": 9.13014099999998,
+      "output": "The experiment tested whether a low-cost sensor could detect water leaks. The sensor detected 18 of 20 leaks in the controlled trial. However, performance in outdoor conditions has not been measured."
+    },
+    {
+      "id": "dev-queue",
+      "split": "development",
+      "locale": "en",
+      "input": "The service lost messages during a simulated power failure. The incident review started at ten in the morning. The worker acknowledged messages before persisting the corresponding records. The report used a new font and a revised company logo. Engineers stored the meeting notes in the internal wiki. The team decided to persist records before acknowledging messages.",
+      "gold": [
+        0,
+        2,
+        5
+      ],
+      "selected": [
+        0,
+        2,
+        5
+      ],
+      "recall": 1,
+      "precision": 1,
+      "leadRecall": 0.6666666666666666,
+      "exactSource": true,
+      "milliseconds": 19.523063000000008,
+      "output": "The service lost messages during a simulated power failure. The worker acknowledged messages before persisting the corresponding records. The team decided to persist records before acknowledging messages."
+    },
+    {
+      "id": "dev-library",
+      "split": "development",
+      "locale": "en",
+      "input": "The library piloted extended evening opening hours for students. The reading room contains twelve green chairs. The entrance sign was replaced during the same month. Evening attendance increased by 30 percent during the pilot. The pilot was discussed in a regular staff meeting. However, staffing costs exceeded the allocated budget.",
+      "gold": [
+        0,
+        3,
+        5
+      ],
+      "selected": [
+        0,
+        3,
+        5
+      ],
+      "recall": 1,
+      "precision": 1,
+      "leadRecall": 0.3333333333333333,
+      "exactSource": true,
+      "milliseconds": 8.751741999999979,
+      "output": "The library piloted extended evening opening hours for students. Evening attendance increased by 30 percent during the pilot. However, staffing costs exceeded the allocated budget."
+    },
+    {
+      "id": "dev-ro-cache",
+      "split": "development",
+      "locale": "ro",
+      "input": "Echipa a evaluat un cache pentru a reduce latența căutărilor în documente. Sala de ședințe are o tablă nouă. Cache-ul a redus latența mediană cu 35 la sută. Raportul include fotografii ale biroului. Prezentarea a folosit noul șablon grafic. Totuși, actualizările au lăsat intrări învechite, iar echipa a decis să amâne lansarea.",
+      "gold": [
+        0,
+        2,
+        5
+      ],
+      "selected": [
+        0,
+        2,
+        5
+      ],
+      "recall": 1,
+      "precision": 1,
+      "leadRecall": 0.6666666666666666,
+      "exactSource": true,
+      "milliseconds": 6.038243999999992,
+      "output": "Echipa a evaluat un cache pentru a reduce latența căutărilor în documente. Cache-ul a redus latența mediană cu 35 la sută. Totuși, actualizările au lăsat intrări învechite, iar echipa a decis să amâne lansarea."
+    },
+    {
+      "id": "dev-negative-result",
+      "split": "development",
+      "locale": "en",
+      "input": "The researchers tested whether extra training data improved classification accuracy. The laboratory newsletter mentioned the start of the experiment. The experiment ran on equipment borrowed from another department. Accuracy remained at 82 percent after the additional data were included. The team archived the installation instructions with the report. The result did not support the claim that more data would improve this classifier.",
+      "gold": [
+        0,
+        3,
+        5
+      ],
+      "selected": [
+        0,
+        3,
+        5
+      ],
+      "recall": 1,
+      "precision": 1,
+      "leadRecall": 0.3333333333333333,
+      "exactSource": true,
+      "milliseconds": 5.940382999999997,
+      "output": "The researchers tested whether extra training data improved classification accuracy. Accuracy remained at 82 percent after the additional data were included. The result did not support the claim that more data would improve this classifier."
+    },
+    {
+      "id": "dev-long-distractor",
+      "split": "development",
+      "locale": "en",
+      "input": "The migration aimed to reduce service interruption during database upgrades. The team discussed database naming conventions, database documentation, database logos, and database meeting schedules in a long administrative session. The new migration procedure reduced interruption from twelve minutes to ninety seconds. The presentation used a photograph of the company building. The migration team received updated stationery. However, the rollback procedure failed and must be repaired before production use.",
+      "gold": [
+        0,
+        2,
+        5
+      ],
+      "selected": [
+        1,
+        2,
+        5
+      ],
+      "recall": 0.6666666666666666,
+      "precision": 0.6666666666666666,
+      "leadRecall": 0.6666666666666666,
+      "exactSource": true,
+      "milliseconds": 5.948824000000002,
+      "output": "The team discussed database naming conventions, database documentation, database logos, and database meeting schedules in a long administrative session. The new migration procedure reduced interruption from twelve minutes to ninety seconds. However, the rollback procedure failed and must be repaired before production use."
+    },
+    {
+      "id": "dev-query",
+      "split": "development",
+      "locale": "en",
+      "input": "The team evaluated a new retrieval service. The retrieval service reduced median latency by 25 percent. The service dashboard has three configurable panels. The service failed the access-control test required for deployment. The evaluation was recorded in the internal project tracker. The deployment was blocked until access-control failures were corrected.",
+      "gold": [
+        3,
+        5
+      ],
+      "selected": [
+        1,
+        3
+      ],
+      "recall": 0.5,
+      "precision": 0.5,
+      "leadRecall": 0,
+      "exactSource": true,
+      "milliseconds": 4.921908000000002,
+      "output": "The retrieval service reduced median latency by 25 percent. The service failed the access-control test required for deployment."
+    },
+    {
+      "id": "holdout-backup",
+      "split": "holdout",
+      "locale": "en",
+      "input": "The company tested whether its backups could restore the complete customer archive. The backup dashboard uses a new colour scheme. The test coordinator reserved a room near reception. The restoration recovered all files but took eleven hours instead of the four-hour target. The backup team updated the meeting calendar. The archive cabinets were labelled alphabetically. The team decided to improve restore speed before accepting the backup process.",
+      "gold": [
+        0,
+        3,
+        6
+      ],
+      "selected": [
+        0,
+        3,
+        6
+      ],
+      "recall": 1,
+      "precision": 1,
+      "leadRecall": 0.3333333333333333,
+      "exactSource": true,
+      "milliseconds": 6.7201379999999915,
+      "output": "The company tested whether its backups could restore the complete customer archive. The restoration recovered all files but took eleven hours instead of the four-hour target. The team decided to improve restore speed before accepting the backup process."
+    },
+    {
+      "id": "holdout-bus",
+      "split": "holdout",
+      "locale": "en",
+      "input": "The town piloted a direct bus route between the university and the railway station. The buses carried temporary blue signs. The route leaflet was printed on recycled paper. Average journey time fell from 28 minutes to 17 minutes. The consultation received several comments about the leaflet design. However, weekend demand remained too low to justify the proposed timetable.",
+      "gold": [
+        0,
+        3,
+        5
+      ],
+      "selected": [
+        0,
+        2,
+        5
+      ],
+      "recall": 0.6666666666666666,
+      "precision": 0.6666666666666666,
+      "leadRecall": 0.3333333333333333,
+      "exactSource": true,
+      "milliseconds": 5.216390999999987,
+      "output": "The town piloted a direct bus route between the university and the railway station. The route leaflet was printed on recycled paper. However, weekend demand remained too low to justify the proposed timetable."
+    },
+    {
+      "id": "holdout-compression",
+      "split": "holdout",
+      "locale": "en",
+      "input": "The study compared two lossless compression methods for research archives. The authors used the same document template as the previous study. The laboratory website announced the experiment. The new method reduced archive size by 18 percent but doubled decompression time. The presentation ended with photographs of the laboratory. The authors recommended the method for infrequently accessed archives rather than interactive workloads.",
+      "gold": [
+        0,
+        3,
+        5
+      ],
+      "selected": [
+        0,
+        3,
+        5
+      ],
+      "recall": 1,
+      "precision": 1,
+      "leadRecall": 0.3333333333333333,
+      "exactSource": true,
+      "milliseconds": 5.995651000000009,
+      "output": "The study compared two lossless compression methods for research archives. The new method reduced archive size by 18 percent but doubled decompression time. The authors recommended the method for infrequently accessed archives rather than interactive workloads."
+    },
+    {
+      "id": "holdout-ro-school",
+      "split": "holdout",
+      "locale": "ro",
+      "input": "Școala a testat un program de tutorat pentru elevii care aveau dificultăți la matematică. Profesorii au schimbat afișele de pe coridor. Rezultatele medii au crescut cu 12 puncte după opt săptămâni de tutorat. Directorul a prezentat fotografii din sala de clasă. Raportul a fost distribuit la ședința lunară. Totuși, studiul nu a avut un grup de control, deci efectul tutoratului rămâne incert.",
+      "gold": [
+        0,
+        2,
+        5
+      ],
+      "selected": [
+        0,
+        2,
+        5
+      ],
+      "recall": 1,
+      "precision": 1,
+      "leadRecall": 0.6666666666666666,
+      "exactSource": true,
+      "milliseconds": 6.684626000000009,
+      "output": "Școala a testat un program de tutorat pentru elevii care aveau dificultăți la matematică. Rezultatele medii au crescut cu 12 puncte după opt săptămâni de tutorat. Totuși, studiul nu a avut un grup de control, deci efectul tutoratului rămâne incert."
+    },
+    {
+      "id": "holdout-ro-network",
+      "split": "holdout",
+      "locale": "ro",
+      "input": "Echipa a testat o nouă configurație a rețelei pentru a elimina întreruperile. Administratorii au cumpărat etichete noi pentru cabluri. Documentația folosește un antet diferit. Numărul întreruperilor a scăzut de la zece la două pe săptămână. Sala serverelor a primit un dulap nou. Totuși, conexiunea de rezervă nu a funcționat în testul de avarie.",
+      "gold": [
+        0,
+        3,
+        5
+      ],
+      "selected": [
+        0,
+        3,
+        5
+      ],
+      "recall": 1,
+      "precision": 1,
+      "leadRecall": 0.3333333333333333,
+      "exactSource": true,
+      "milliseconds": 5.8817319999999995,
+      "output": "Echipa a testat o nouă configurație a rețelei pentru a elimina întreruperile. Numărul întreruperilor a scăzut de la zece la două pe săptămână. Totuși, conexiunea de rezervă nu a funcționat în testul de avarie."
+    },
+    {
+      "id": "holdout-open-science",
+      "split": "holdout",
+      "locale": "en",
+      "input": "The project published an executable reproduction of the simulation study. The repository contains a banner designed by the communications team. The authors presented the repository at a departmental meeting. Independent reruns reproduced the main trend but not the reported confidence interval. The issue tracker also contains requests for a different website theme. The mismatch was traced to an undocumented filtering step in the original analysis.",
+      "gold": [
+        0,
+        3,
+        5
+      ],
+      "selected": [
+        1,
+        3,
+        4
+      ],
+      "recall": 0.3333333333333333,
+      "precision": 0.3333333333333333,
+      "leadRecall": 0.3333333333333333,
+      "exactSource": true,
+      "milliseconds": 8.868471999999997,
+      "output": "The repository contains a banner designed by the communications team. Independent reruns reproduced the main trend but not the reported confidence interval. The issue tracker also contains requests for a different website theme."
+    },
+    {
+      "id": "holdout-no-cue",
+      "split": "holdout",
+      "locale": "en",
+      "input": "The museum introduced a timed-entry system to shorten entrance queues. Tickets include a small illustration of the building. The gift shop sells postcards with the same illustration. Median waiting time changed from 45 minutes to 16 minutes. The museum repainted its staff room during the trial. Visitors arriving without online reservations were turned away even when galleries were half empty.",
+      "gold": [
+        0,
+        3,
+        5
+      ],
+      "selected": [
+        0,
+        2,
+        5
+      ],
+      "recall": 0.6666666666666666,
+      "precision": 0.6666666666666666,
+      "leadRecall": 0.3333333333333333,
+      "exactSource": true,
+      "milliseconds": 8.996809000000042,
+      "output": "The museum introduced a timed-entry system to shorten entrance queues. The gift shop sells postcards with the same illustration. Visitors arriving without online reservations were turned away even when galleries were half empty."
+    },
+    {
+      "id": "holdout-privacy",
+      "split": "holdout",
+      "locale": "en",
+      "input": "The team evaluated a method for sharing aggregate research data without releasing individual records. The project held a workshop with a new slide template. The released aggregates preserved the overall trend but obscured the smallest subgroups. The workshop catering included vegetarian sandwiches. The project website has a redesigned footer. The report warns that useful aggregate accuracy does not establish privacy against every attack.",
+      "gold": [
+        0,
+        2,
+        5
+      ],
+      "selected": [
+        0,
+        1,
+        5
+      ],
+      "recall": 0.6666666666666666,
+      "precision": 0.6666666666666666,
+      "leadRecall": 0.6666666666666666,
+      "exactSource": true,
+      "milliseconds": 5.4401940000000195,
+      "output": "The team evaluated a method for sharing aggregate research data without releasing individual records. The project held a workshop with a new slide template. The report warns that useful aggregate accuracy does not establish privacy against every attack."
+    },
+    {
+      "id": "holdout-garden",
+      "split": "holdout",
+      "locale": "en",
+      "input": "The gardeners compared two irrigation schedules for newly planted trees. The garden entrance received a new wooden sign. The volunteer coordinator changed the meeting location. Trees watered twice a week survived at the same rate as trees watered every day. The garden newsletter included pictures of the sign. The twice-weekly schedule used 55 percent less water during the trial.",
+      "gold": [
+        0,
+        3,
+        5
+      ],
+      "selected": [
+        0,
+        1,
+        3
+      ],
+      "recall": 0.6666666666666666,
+      "precision": 0.6666666666666666,
+      "leadRecall": 0.3333333333333333,
+      "exactSource": true,
+      "milliseconds": 6.785731999999996,
+      "output": "The gardeners compared two irrigation schedules for newly planted trees. The garden entrance received a new wooden sign. Trees watered twice a week survived at the same rate as trees watered every day."
+    },
+    {
+      "id": "holdout-ro-archive",
+      "split": "holdout",
+      "locale": "ro",
+      "input": "Arhiva a testat recunoașterea automată a textului pentru documente istorice. Dosarele au primit etichete colorate. Sistemul a transcris corect 94 la sută dintre caracterele din paginile tipărite. Echipa a reorganizat rafturile din depozit. Prezentarea a inclus imagini ale clădirii. Totuși, precizia a scăzut la 61 la sută pentru documentele scrise de mână.",
+      "gold": [
+        0,
+        2,
+        5
+      ],
+      "selected": [
+        0,
+        2,
+        5
+      ],
+      "recall": 1,
+      "precision": 1,
+      "leadRecall": 0.6666666666666666,
+      "exactSource": true,
+      "milliseconds": 5.514494000000013,
+      "output": "Arhiva a testat recunoașterea automată a textului pentru documente istorice. Sistemul a transcris corect 94 la sută dintre caracterele din paginile tipărite. Totuși, precizia a scăzut la 61 la sută pentru documentele scrise de mână."
+    }
+  ],
+  "completions": [
+    {
+      "id": "positive-chain",
+      "text": "Atlas retries requests. Atlas writes records. Atlas does not deduplicate requests.",
+      "expected": [
+        "duplicate_risk",
+        "dedup_review"
+      ],
+      "actual": [
+        "dedup_review",
+        "duplicate_risk"
+      ],
+      "pass": true,
+      "output": "Atlas has a risk of producing duplicate records when requests are retried. Atlas requires a review of the deduplication strategy.",
+      "parsed": [
+        {
+          "predicate": "retries",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "writes",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "deduplicates",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "negative",
+          "mode": "asserted",
+          "scope": "input"
+        }
+      ]
+    },
+    {
+      "id": "explicit-negative",
+      "text": "Atlas does not retry requests. Atlas writes records. Atlas does not deduplicate requests.",
+      "expected": [],
+      "actual": [],
+      "pass": true,
+      "output": "",
+      "parsed": [
+        {
+          "predicate": "retries",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "negative",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "writes",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "deduplicates",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "negative",
+          "mode": "asserted",
+          "scope": "input"
+        }
+      ]
+    },
+    {
+      "id": "modal-may",
+      "text": "Atlas may retry requests. Atlas writes records. Atlas does not deduplicate requests.",
+      "expected": [],
+      "actual": [],
+      "pass": true,
+      "output": "",
+      "parsed": [
+        {
+          "predicate": "retries",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "possible",
+          "scope": "input"
+        },
+        {
+          "predicate": "writes",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "deduplicates",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "negative",
+          "mode": "asserted",
+          "scope": "input"
+        }
+      ]
+    },
+    {
+      "id": "modal-must",
+      "text": "Atlas must retry requests. Atlas writes records. Atlas does not deduplicate requests.",
+      "expected": [],
+      "actual": [],
+      "pass": true,
+      "output": "",
+      "parsed": [
+        {
+          "predicate": "retries",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "required",
+          "scope": "input"
+        },
+        {
+          "predicate": "writes",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "deduplicates",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "negative",
+          "mode": "asserted",
+          "scope": "input"
+        }
+      ]
+    },
+    {
+      "id": "unknown-is-not-negative",
+      "text": "Atlas retries requests. Atlas writes records.",
+      "expected": [],
+      "actual": [],
+      "pass": true,
+      "output": "",
+      "parsed": [
+        {
+          "predicate": "retries",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "writes",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        }
+      ]
+    },
+    {
+      "id": "conflict",
+      "text": "Atlas retries requests. Atlas deduplicates requests. Atlas writes records. Atlas does not deduplicate requests.",
+      "expected": [],
+      "actual": [],
+      "pass": true,
+      "output": "",
+      "parsed": [
+        {
+          "predicate": "retries",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "deduplicates",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "writes",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "deduplicates",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "negative",
+          "mode": "asserted",
+          "scope": "input"
+        }
+      ]
+    },
+    {
+      "id": "reported-speech",
+      "text": "Mara said that Atlas retries requests. Atlas writes records. Atlas does not deduplicate requests.",
+      "expected": [],
+      "actual": [],
+      "pass": true,
+      "output": "",
+      "parsed": [
+        {
+          "predicate": "writes",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "deduplicates",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "negative",
+          "mode": "asserted",
+          "scope": "input"
+        }
+      ]
+    },
+    {
+      "id": "conditional",
+      "text": "If Atlas retries requests, the operation may fail. Atlas writes records. Atlas does not deduplicate requests.",
+      "expected": [],
+      "actual": [],
+      "pass": true,
+      "output": "",
+      "parsed": [
+        {
+          "predicate": "writes",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "deduplicates",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "negative",
+          "mode": "asserted",
+          "scope": "input"
+        }
+      ]
+    },
+    {
+      "id": "quoted-assertion",
+      "text": "\"Atlas retries requests.\" Atlas writes records. Atlas does not deduplicate requests.",
+      "expected": [],
+      "actual": [],
+      "pass": true,
+      "output": "",
+      "parsed": [
+        {
+          "predicate": "writes",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "deduplicates",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "negative",
+          "mode": "asserted",
+          "scope": "input"
+        }
+      ]
+    },
+    {
+      "id": "question",
+      "text": "Atlas retries requests? Atlas writes records. Atlas does not deduplicate requests.",
+      "expected": [],
+      "actual": [],
+      "pass": true,
+      "output": "",
+      "parsed": [
+        {
+          "predicate": "writes",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "deduplicates",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "negative",
+          "mode": "asserted",
+          "scope": "input"
+        }
+      ]
+    },
+    {
+      "id": "unknown-subject",
+      "text": "Orion retries requests. Atlas writes records. Atlas does not deduplicate requests.",
+      "expected": [],
+      "actual": [],
+      "pass": true,
+      "output": "",
+      "parsed": [
+        {
+          "predicate": "retries",
+          "subject": "Orion",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "writes",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "deduplicates",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "negative",
+          "mode": "asserted",
+          "scope": "input"
+        }
+      ]
+    },
+    {
+      "id": "protected-retry",
+      "text": "Atlas retries requests. Atlas deduplicates requests.",
+      "expected": [
+        "retry_protected"
+      ],
+      "actual": [
+        "retry_protected"
+      ],
+      "pass": true,
+      "output": "Atlas is protected against duplicate effects caused by retries under the manual assumptions.",
+      "parsed": [
+        {
+          "predicate": "retries",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "deduplicates",
+          "subject": "Atlas",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        }
+      ]
+    },
+    {
+      "id": "worker-loss",
+      "text": "Delta is a worker. Delta acknowledges messages before persisting them. Delta uses volatile memory.",
+      "expected": [
+        "loss_risk",
+        "durability_review"
+      ],
+      "actual": [
+        "durability_review",
+        "loss_risk"
+      ],
+      "pass": true,
+      "output": "Delta has a risk of losing messages if the volatile state is lost. Delta requires a review of the persistence strategy.",
+      "parsed": [
+        {
+          "predicate": "worker",
+          "subject": "Delta",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "early_ack",
+          "subject": "Delta",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "volatile",
+          "subject": "Delta",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        }
+      ]
+    },
+    {
+      "id": "cache-stale",
+      "text": "Cedar is a cache. Cedar has an expiration limit. Cedar does not invalidate entries after updates.",
+      "expected": [
+        "stale_risk",
+        "cache_review"
+      ],
+      "actual": [
+        "cache_review",
+        "stale_risk"
+      ],
+      "pass": true,
+      "output": "Cedar has a risk of serving stale entries before their expiration. Cedar requires a review of the cache invalidation strategy.",
+      "parsed": [
+        {
+          "predicate": "cache",
+          "subject": "Cedar",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "ttl",
+          "subject": "Cedar",
+          "object": "",
+          "polarity": "positive",
+          "mode": "asserted",
+          "scope": "input"
+        },
+        {
+          "predicate": "invalidates",
+          "subject": "Cedar",
+          "object": "",
+          "polarity": "negative",
+          "mode": "asserted",
+          "scope": "input"
+        }
+      ]
+    },
+    {
+      "id": "empty-evidence",
+      "text": "The meeting ended after lunch.",
+      "expected": [],
+      "actual": [],
+      "pass": true,
+      "output": "",
+      "parsed": []
+    }
+  ]
+}

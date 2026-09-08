@@ -1,0 +1,9 @@
+@input item
+@members kernel.value.get value $item key "items"
+@subject kernel.value.get value $item key "key"
+@args kernel.value.record key "fragment"
+@fragments kernel.flow.map items $members circuit "core.field" with $args
+@joined language.conjoin items $fragments
+@parts kernel.seq.make item $subject item " " item $joined item "."
+@text kernel.text.join items $parts
+@output result $text

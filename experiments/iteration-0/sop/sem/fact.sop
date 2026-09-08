@@ -1,0 +1,10 @@
+@input term
+@input sources
+@input parents
+@input rule default ""
+@input sentence default -1
+@id kernel.value.hash value $term
+@proof kernel.value.record term $term parents $parents rule $rule sources $sources
+@proofId kernel.value.hash value $proof
+@value kernel.value.record id $id proofId $proofId term $term sources $sources parents $parents rule $rule sentence $sentence
+@output result $value

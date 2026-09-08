@@ -1,0 +1,9 @@
+@x kernel.logic.variable name "service"
+@y kernel.logic.variable name "component"
+@relation sem.term predicate "shares" subject $x object $y
+@risk sem.term predicate "duplicate_risk" subject $y
+@body kernel.seq.make item $relation item $risk
+@head sem.term predicate "integration_review" subject $x
+@source kernel.value.record source "examples/manual.txt" hash "9fb102f9d41a1894e54c9ee2" start 809 end 932 quote "Within this model, a service that shares storage with a component at risk of duplicate records needs an integration review."
+@rule kernel.value.record id "kb.rules.shared_impact" body $body head $head source $source
+@output result $rule

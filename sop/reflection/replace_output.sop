@@ -1,0 +1,7 @@
+@input program
+@input text
+@outputRef kernel.value.record kind "literal" value $text
+@patch kernel.value.record output $outputRef
+@rewritten kernel.value.merge value $program value $patch
+@validated kernel.graph.validate program $rewritten
+@output result $validated

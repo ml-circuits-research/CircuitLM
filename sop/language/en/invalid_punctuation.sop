@@ -1,0 +1,4 @@
+@input item
+@input text
+@found kernel.text.contains text $text part $item
+@output result $found

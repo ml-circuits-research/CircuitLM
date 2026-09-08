@@ -1,0 +1,9 @@
+@input candidates
+@input prefix
+@best kernel.value.get value $candidates key 0
+@text kernel.value.get value $best key "text"
+@n kernel.seq.count items $prefix
+@suffix kernel.text.slice text $text start $n
+@fact kernel.value.get value $best key "fact"
+@value kernel.value.record text $suffix completedSentence $text fact $fact matched true method "supported-prefix-completion"
+@output result $value

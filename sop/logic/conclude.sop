@@ -1,0 +1,11 @@
+@input item
+@input rule
+@bindings kernel.value.get value $item key "bindings"
+@parents kernel.value.get value $item key "witnesses"
+@head kernel.value.get value $rule key "head"
+@term kernel.logic.substitute term $head bindings $bindings
+@id kernel.value.get value $rule key "id"
+@source kernel.value.get value $rule key "source"
+@sources kernel.seq.make item $source
+@fact sem.fact term $term sources $sources parents $parents rule $id
+@output result $fact

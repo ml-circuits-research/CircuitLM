@@ -1,0 +1,29 @@
+@input text
+@input pack
+@input limit default 5
+@input rounds default 12
+@lexicon kernel.value.get value $pack key "lexicon"
+@rules kernel.value.get value $pack key "rules"
+@realizers kernel.value.get value $pack key "realizers"
+@parsed language.parse text $text lexicon $lexicon
+@base kernel.value.get value $parsed key "facts"
+@empty kernel.seq.make
+@background kernel.value.get value $pack key "facts" default $empty
+@both kernel.seq.concat items $base items $background
+@seed kernel.seq.unique items $both key "id"
+@subjects0 kernel.flow.map items $base circuit "sem.subject"
+@subjects kernel.seq.unique items $subjects0
+@closure logic.run facts $seed rules $rules rounds $rounds
+@accepted kernel.value.get value $closure key "facts"
+@allDerived kernel.flow.filter items $accepted circuit "logic.is_derived"
+@relargs kernel.value.record subjects $subjects
+@derived kernel.flow.filter items $allDerived circuit "logic.relevant" with $relargs
+@selected kernel.seq.take items $derived count $limit
+@args kernel.value.record lexicon $realizers
+@realized kernel.flow.map items $selected circuit "language.realize.fact" with $args
+@fieldArgs kernel.value.record key "text"
+@texts kernel.flow.map items $realized circuit "core.field" with $fieldArgs
+@answer kernel.text.join items $texts separator " "
+@complete kernel.value.get value $closure key "complete"
+@value kernel.value.record text $answer selected $selected parsed $parsed closure $closure complete $complete method "grounded-deductive-completion"
+@output result $value

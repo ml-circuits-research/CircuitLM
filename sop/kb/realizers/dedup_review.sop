@@ -1,0 +1,2 @@
+@entry kernel.value.record predicate "dedup_review" positive "requires a review of the deduplication strategy"
+@output result $entry

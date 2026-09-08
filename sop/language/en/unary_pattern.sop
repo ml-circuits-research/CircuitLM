@@ -1,0 +1,4 @@
+@input head
+@input tokens
+@pattern kernel.seq.concat items $head items $tokens
+@output result $pattern

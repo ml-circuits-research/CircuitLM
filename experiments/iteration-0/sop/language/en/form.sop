@@ -1,0 +1,6 @@
+@input text
+@input polarity default "positive"
+@input mode default "asserted"
+@tokens kernel.text.tokens text $text
+@form kernel.value.record tokens $tokens polarity $polarity mode $mode fragment $text
+@output result $form

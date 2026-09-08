@@ -1,0 +1,3 @@
+@input items
+@out kernel.text.join items $items separator ""
+@output result $out

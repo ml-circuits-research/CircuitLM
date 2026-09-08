@@ -1,0 +1,16 @@
+{
+  "schema": {
+    "rules": 2,
+    "facts": 0,
+    "lexicon": 2,
+    "sourceSpansChecked": true
+  },
+  "proof": {
+    "facts": 0,
+    "sourceFacts": 0,
+    "derivedFacts": 0,
+    "valid": true,
+    "scope": "structural derivation and source integrity; not validation of the source meaning or truth"
+  },
+  "note": "Source integrity and rule safety do not prove that an authored rule faithfully interprets its source."
+}

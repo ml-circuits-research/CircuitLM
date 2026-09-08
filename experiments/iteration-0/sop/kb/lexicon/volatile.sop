@@ -1,0 +1,7 @@
+@entry language.en.entry
+  predicate "volatile"
+  positive "uses volatile memory"
+  negative "does not use volatile memory"
+  possible "may use volatile memory"
+  required "must use volatile memory"
+@output result $entry

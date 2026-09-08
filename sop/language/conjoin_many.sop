@@ -1,0 +1,9 @@
+@input items
+@n kernel.seq.count items $items
+@lastIndex kernel.math.op op "sub" a $n b 1
+@before kernel.seq.take items $items count $lastIndex
+@first kernel.text.join items $before separator ", "
+@last kernel.value.get value $items key $lastIndex
+@parts kernel.seq.make item $first item " and " item $last
+@text kernel.text.join items $parts
+@output result $text

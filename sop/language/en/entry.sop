@@ -1,0 +1,13 @@
+@input predicate
+@input positive
+@input negative
+@input possible
+@input required
+@input relational default false
+@p language.en.form text $positive
+@n language.en.form text $negative polarity "negative"
+@m language.en.form text $possible mode "possible"
+@r language.en.form text $required mode "required"
+@forms kernel.seq.make item $p item $n item $m item $r
+@entry kernel.value.record predicate $predicate forms $forms positive $positive negative $negative possible $possible required $required relational $relational
+@output result $entry

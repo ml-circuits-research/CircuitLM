@@ -1,0 +1,7 @@
+@entry language.en.entry
+  predicate "invalidates"
+  positive "invalidates entries after updates"
+  negative "does not invalidate entries after updates"
+  possible "may invalidate entries after updates"
+  required "must invalidate entries after updates"
+@output result $entry

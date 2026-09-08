@@ -1,0 +1,15 @@
+@input item
+@input selected
+@input all
+@input limit
+@feature kernel.value.get value $item key "feature"
+@cluster text.summary.context_cluster item $feature all $all
+@valid core.nonempty items $cluster
+@both kernel.seq.concat items $selected items $cluster
+@combined kernel.seq.unique items $both key "index"
+@n kernel.seq.count items $combined
+@fits kernel.math.op op "le" a $n b $limit
+@eligible kernel.math.op op "and" a $valid b $fits
+@score kernel.value.get value $item key "score"
+@out kernel.value.record feature $feature cluster $cluster combined $combined eligible $eligible score $score
+@output result $out

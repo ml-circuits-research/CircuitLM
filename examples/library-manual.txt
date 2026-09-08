@@ -1,0 +1,2 @@
+Within this example, an item that is on loan and is overdue needs a return reminder.
+Within this example, an item that needs a return reminder needs a loan review.

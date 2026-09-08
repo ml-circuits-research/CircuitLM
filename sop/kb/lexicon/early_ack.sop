@@ -1,0 +1,7 @@
+@entry language.en.entry
+  predicate "early_ack"
+  positive "acknowledges messages before persisting them"
+  negative "does not acknowledge messages before persisting them"
+  possible "may acknowledge messages before persisting them"
+  required "must acknowledge messages before persisting them"
+@output result $entry

@@ -1,0 +1,11 @@
+@input item
+@input predicate
+@input form
+@input sentence
+@input sourceHash
+@subjectTokens kernel.value.get value $item key "subject"
+@subject kernel.text.join items $subjectTokens separator " "
+@valid language.en.subject_valid subject $subject
+@args kernel.value.record subject $subject predicate $predicate form $form sentence $sentence sourceHash $sourceHash
+@facts kernel.flow.choose condition $valid then "language.en.emit_valid" else "core.empty" with $args
+@output result $facts

@@ -1,0 +1,2 @@
+@input state
+@output result $state

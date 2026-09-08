@@ -1,0 +1,5 @@
+@input item
+@input predicate
+@p kernel.value.get value $item key "predicate"
+@yes kernel.value.equal left $p right $predicate
+@output result $yes

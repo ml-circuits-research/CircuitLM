@@ -1,0 +1,24 @@
+@input text
+@input pack
+@input limit default 4
+@input query default ""
+@input locale default "en"
+@original text.summarize text $text query $query limit $limit locale $locale
+@selected kernel.value.get value $original key "selected"
+@args kernel.value.record key "index"
+@indexes kernel.flow.map items $selected circuit "core.field" with $args
+@lexicon kernel.value.get value $pack key "lexicon"
+@parsed language.parse text $text lexicon $lexicon
+@facts kernel.value.get value $parsed key "facts"
+@fargs kernel.value.record indexes $indexes
+@selectedFacts kernel.flow.filter items $facts circuit "text.summary.fact_selected" with $fargs
+@accepted logic.accepted facts $facts
+@acceptedSelected kernel.flow.filter items $accepted circuit "text.summary.fact_selected" with $fargs
+@a kernel.seq.count items $selected
+@b kernel.seq.count items $acceptedSelected
+@complete kernel.value.equal left $a right $b
+@nonempty kernel.math.op op "gt" a $a b 0
+@safe kernel.math.op op "and" a $complete b $nonempty
+@renderargs kernel.value.record original $original selectedFacts $selectedFacts lexicon $lexicon
+@result kernel.flow.choose condition $safe then "text.summary.render_semantic" else "text.summary.fallback" with $renderargs
+@output result $result

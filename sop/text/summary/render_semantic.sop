@@ -1,0 +1,11 @@
+@input selectedFacts
+@input lexicon
+@input original
+@args kernel.value.record lexicon $lexicon
+@realized kernel.flow.map items $selectedFacts circuit "language.realize.fact" with $args
+@groups kernel.seq.group items $realized key "subject"
+@sentences kernel.flow.map items $groups circuit "text.summary.render_group"
+@text kernel.text.join items $sentences separator " "
+@selected kernel.value.get value $original key "selected"
+@result kernel.value.record text $text selected $selected facts $selectedFacts method "symbolic-aggregation" original $original
+@output result $result

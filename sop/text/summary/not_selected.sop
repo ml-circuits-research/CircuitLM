@@ -1,0 +1,6 @@
+@input item
+@input indexes
+@index kernel.value.get value $item key "index"
+@selected kernel.seq.includes items $indexes item $index
+@keep kernel.math.op op "not" a $selected
+@output result $keep

@@ -1,0 +1,7 @@
+@entry language.en.entry
+  predicate "retries"
+  positive "retries requests"
+  negative "does not retry requests"
+  possible "may retry requests"
+  required "must retry requests"
+@output result $entry

@@ -1,0 +1,7 @@
+@input item
+@input chosen
+@a kernel.value.get value $item key "index"
+@b kernel.value.get value $chosen key "index"
+@same kernel.value.equal left $a right $b
+@different kernel.math.op op "not" a $same
+@output result $different

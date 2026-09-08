@@ -1,0 +1,13 @@
+@loaned library.loaned
+@overdue library.overdue
+@lexicon kernel.seq.make item $loaned item $overdue
+@reminder library.reminder
+@review library.review
+@rules kernel.seq.make item $reminder item $review
+@n0 kernel.value.record predicate "return_reminder" positive "needs a return reminder"
+@n1 kernel.value.record predicate "loan_review" positive "needs a loan review"
+@derived kernel.seq.make item $n0 item $n1
+@realizers kernel.seq.concat items $lexicon items $derived
+@facts kernel.seq.make
+@pack kernel.value.record facts $facts lexicon $lexicon rules $rules realizers $realizers name "Library example"
+@output result $pack

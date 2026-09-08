@@ -1,0 +1,8 @@
+@input term
+@p kernel.value.get value $term key "polarity"
+@isPositive kernel.value.equal left $p right "positive"
+@args kernel.value.record
+@neg kernel.flow.choose condition $isPositive then "logic.negative" else "logic.positive" with $args
+@delta kernel.value.record polarity $neg
+@opposite kernel.value.merge value $term value $delta
+@output result $opposite

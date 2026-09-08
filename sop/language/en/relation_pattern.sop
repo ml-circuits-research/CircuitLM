@@ -1,0 +1,6 @@
+@input head
+@input tokens
+@capture kernel.value.record kind "capture" name "object" min 1 max 8
+@tail kernel.seq.make item $capture
+@pattern kernel.seq.concat items $head items $tokens items $tail
+@output result $pattern

@@ -1,0 +1,16 @@
+@input state
+@input config
+@selected kernel.value.get value $state key "selected"
+@remaining kernel.value.get value $state key "remaining"
+@covered kernel.value.get value $state key "covered"
+@all kernel.value.get value $state key "all"
+@limit kernel.value.get value $state key "limit"
+@args kernel.value.record selected $selected covered $covered config $config
+@scored kernel.flow.map items $remaining circuit "text.summary.marginal" with $args
+@cargs kernel.value.record selected $selected all $all limit $limit
+@contextual kernel.flow.map items $scored circuit "text.summary.contextualize" with $cargs
+@candidates kernel.flow.filter items $contextual circuit "text.summary.eligible"
+@exists core.nonempty items $candidates
+@commitargs kernel.value.record state $state candidates $candidates
+@result kernel.flow.choose condition $exists then "text.summary.commit_selection" else "core.state" with $commitargs
+@output result $result
